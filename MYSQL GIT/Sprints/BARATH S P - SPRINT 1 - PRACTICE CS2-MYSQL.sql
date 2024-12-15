@@ -1,0 +1,67 @@
+-- Task 1:
+create database techmac_db;
+use techmac_db;
+-- Task 2:
+create table techhyve_employees(Employee_ID varchar(50) primary key not null ,First_Name varchar(50) not null,Last_Name varchar(50) not null,Gender varchar(15) not null,age int not null);
+create table techcloud_employees(Employee_ID varchar(50) primary key not null, First_Name varchar(50) not null,Last_Name varchar(50) not null,Gender varchar(50) not null,age int not null);
+create table techsoft_Employees(Employee_ID varchar(50) primary key not null, First_Name varchar(50) not null,Last_Name varchar(50) not null, Gender varchar(50) not null ,age int not null);
+desc techhyve_employees;
+desc techcloud_employees;
+desc techsoft_employees;
+-- Task 3: 
+insert into techhyve_employees VALUES("TH0001","ELI","EVANS","MALE",26);
+insert into techhyve_employees values("TH0002","CARLOS","SIMMONS","MALE",32);
+insert into techhyve_employees values("TH0003","KATHIE","BRYANT","FEMALE",25);
+insert into techhyve_employees values("TH0004","JOEY","HUGHES","MALE",41);
+insert into techhyve_employees values("TH0005","ALICE","MATTHEWS","FEMALE",52);
+select * from techhyve_employees;
+insert into techcloud_employees VALUES ("TC0001","TERESA","BRYANT","FEMALE",39);
+insert into techcloud_employees values("TC0002","ALEXIS","PATTERSON","MALE",48);
+insert into techcloud_employees values("TC0003","ROSE","BELL","FEMALE",42);
+insert into techcloud_employees values("TC0004","GEMMMA","WATKINS","FEMALE",44);
+insert into techcloud_employees values("TC0005","KINGSTON","MARTINEZ","MALE",29);
+select * from techcloud_employees;
+insert into techsoft_Employees values("TS0001","PETER","BURTLER","MALE",44);
+insert into techsoft_Employees values("TS0002","HAROLD","SIMMONS","MALE",54);
+insert into techsoft_Employees values("TS0003","JULIANA","SANDERS","FEMALE",36);
+insert into techsoft_Employees values("TS0004","PAUL","WARD","MALE",29);
+insert into techsoft_Employees values("TS0005","NICOLE","BRYANT","FEMALE",30);
+select * from techsoft_Employees;
+-- Task 4:
+create database backup_techmac_db;
+use backup_techmac_db;
+create table techhyve_employees(Employee_ID varchar(50) primary key not null ,First_Name varchar(50) not null,Last_Name varchar(50) not null,Gender varchar(15) not null,age int not null);
+create table techcloud_employees(Employee_ID varchar(50) primary key not null, First_Name varchar(50) not null,Last_Name varchar(50) not null,Gender varchar(50) not null,age int not null);
+create table techsoft_Employees(Employee_ID varchar(50) primary key not null, First_Name varchar(50) not null,Last_Name varchar(50) not null, Gender varchar(50) not null ,age int not null);
+insert into techhyve_employees VALUES("TH0001","ELI","EVANS","MALE",26);
+insert into techhyve_employees values("TH0002","CARLOS","SIMMONS","MALE",32);
+insert into techhyve_employees values("TH0003","KATHIE","BRYANT","FEMALE",25);
+insert into techhyve_employees values("TH0004","JOEY","HUGHES","MALE",41);
+insert into techhyve_employees values("TH0005","ALICE","MATTHEWS","FEMALE",52);
+insert into techcloud_employees VALUES ("TC0001","TERESA","BRYANT","FEMALE",39);
+insert into techcloud_employees values("TC0002","ALEXIS","PATTERSON","MALE",48);
+insert into techcloud_employees values("TC0003","ROSE","BELL","FEMALE",42);
+insert into techcloud_employees values("TC0004","GEMMMA","WATKINS","FEMALE",44);
+insert into techcloud_employees values("TC0005","KINGSTON","MARTINEZ","MALE",29);
+insert into techsoft_Employees values("TS0001","PETER","BURTLER","MALE",44);
+insert into techsoft_Employees values("TS0002","HAROLD","SIMMONS","MALE",54);
+insert into techsoft_Employees values("TS0003","JULIANA","SANDERS","FEMALE",36);
+insert into techsoft_Employees values("TS0004","PAUL","WARD","MALE",29);
+insert into techsoft_Employees values("TS0005","NICOLE","BRYANT","FEMALE",30);
+create table techhyve_employees_bkp like techhyve_employees;
+create table techcloud_employees_bkp like techcloud_employees;
+create table techsoft_employees_bkp like techsoft_employees;
+insert techhyve_employees_bkp select * from techhyve_employees;
+insert techcloud_employees_bkp select * from techcloud_employees;
+insert techsoft_employees_bkp select * from techsoft_employees;
+select * from techhyve_employees_bkp;
+select * from techcloud_employees_bkp;
+select * from techsoft_employees_bkp;
+-- Task 5:
+use techmac_db;
+delete from techhyve_employees where employee_id='TH0003';
+delete from techhyve_employees where employee_id='TH0005';
+delete from techcloud_employees where employee_id='TC0001';
+delete from techcloud_employees where employee_id='TC0004';
+select * from techhyve_employees;
+select * from techcloud_employees;
